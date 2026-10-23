@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MCRIBUNKS — Stonks meets McRib</title>
+<meta name="description" content="The tastiest buy signal. Stonks meets McRib. $MCRIBUNKS">
+<meta name="theme-color" content="#0a3fd0">
+<meta property="og:title" content="MCRIBUNKS — Stonks meets McRib">
+<meta property="og:description" content="The tastiest buy signal. Stonks meets McRib. $MCRIBUNKS">
+<meta property="og:image" content="assets/chill.webp">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Martian+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0a3fd0;--blue2:#1f5af0;--grid:#4b8cff;--org:#ff7a1a;--yel:#ffd23f;--bun:#f2a24e;--sauce:#b8261c;--ink:#0b0d14;--cream:#fff6e6;--green:#27d36a;--hf:'Archivo',system-ui,sans-serif;--mf:'Martian Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--blue);color:#fff;font-family:var(--mf);overflow-x:clip;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(120,170,255,.28) 2px,transparent 2px) 0 0/120px 120px,linear-gradient(90deg,rgba(120,170,255,.28) 2px,transparent 2px) 0 0/120px 120px,radial-gradient(70% 60% at 50% 30%,#2160ff,var(--blue) 70%,#062a9a)}
+a{color:inherit}img{display:block;max-width:100%}
+.big{font-family:var(--hf);font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:-.02em;color:#fff;-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;text-shadow:5px 5px 0 var(--org),10px 10px 0 var(--ink)}
+.big em{font-style:normal;color:var(--yel)}
+
+.top{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(14px,3vw,28px);transition:background .3s}
+.top.s{background:rgba(10,63,208,.88);backdrop-filter:blur(8px);border-bottom:3px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:50%;border:3px solid var(--ink);background:#fff}
+.brand b{font-family:var(--hf);font-weight:900;font-size:20px;-webkit-text-stroke:5px var(--ink);paint-order:stroke fill}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--hf);font-weight:900;font-size:17px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;padding:14px 22px;border:3px solid var(--ink);border-radius:12px;background:linear-gradient(180deg,#ffa24d,var(--org));color:var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .1s,box-shadow .1s;cursor:pointer;white-space:nowrap}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
+.btn.w{background:#fff}.btn.y{background:var(--yel)}
+.btn svg{width:15px;height:15px}
+.top .btn{font-size:14px;padding:8px 13px;box-shadow:3px 3px 0 var(--ink)}
+
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:96px 16px 40px;overflow:hidden;isolation:isolate}
+.hero .bg{position:absolute;right:0;bottom:0;z-index:-1;height:80%;aspect-ratio:1672/941;max-width:100%;background:url(assets/chill.webp) right bottom/cover no-repeat;-webkit-mask:radial-gradient(ellipse 75% 80% at 68% 62%,#000 60%,transparent 100%);mask:radial-gradient(ellipse 75% 80% at 68% 62%,#000 60%,transparent 100%)}
+.tick{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.12em;background:var(--ink);border-radius:8px;padding:8px 12px}
+.tick b{color:var(--green)}
+.tick i{font-style:normal;color:var(--green)}
+h1{margin-top:16px;font-size:clamp(58px,11.5vw,176px);white-space:nowrap}
+.sub{margin-top:24px;font-family:var(--hf);font-weight:900;font-size:clamp(22px,3vw,38px);text-transform:uppercase;line-height:1.05;-webkit-text-stroke:5px var(--ink);paint-order:stroke fill}
+.sub em{font-style:normal;color:var(--yel)}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+
+.marq{background:var(--org);border-block:4px solid var(--ink);overflow:hidden;transform:rotate(-1.5deg);margin:0 -10px;position:relative;z-index:2}
+.marq div{display:flex;width:max-content;animation:mq 22s linear infinite}
+.marq span{font-family:var(--hf);font-weight:900;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;color:var(--ink);padding:10px 24px;white-space:nowrap}
+.marq span i{font-style:normal;margin-left:24px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{max-width:1160px;margin:0 auto;padding:96px 16px;text-align:center}
+h2{font-size:clamp(42px,7vw,92px)}
+.kick{display:inline-block;font-weight:800;font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--yel);border-radius:6px;padding:7px 12px;margin-bottom:20px}
+.lead{max-width:620px;margin:22px auto 0;font-size:14.5px;line-height:1.7;color:#dbe6ff}
+
+/* chart */
+.term{margin:44px auto 0;max-width:860px;background:var(--ink);border:4px solid var(--ink);border-radius:20px;box-shadow:10px 10px 0 var(--org);overflow:hidden;text-align:left}
+.th{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;background:#141a2c;border-bottom:2px solid #26304d;font-size:12px}
+.th b{font-family:var(--hf);font-weight:900;font-size:18px;color:#fff}
+.px{font-family:var(--hf);font-weight:900;font-size:26px;color:var(--green)}
+.px small{font-family:var(--mf);font-size:12px;margin-left:8px}
+.px.dn{color:#ff5a5a}
+canvas{display:block;width:100%;height:auto;background:#0d1222}
+.tb{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:14px 18px;background:#141a2c;border-top:2px solid #26304d}
+.tb p{font-size:12.5px;color:#9fb2e0;min-height:2.4em;line-height:1.6}
+.tb p b{color:var(--yel)}
+.sig{display:inline-block;margin-top:2px;font-family:var(--hf);font-weight:900;font-size:13px;padding:3px 8px;border-radius:5px;background:var(--green);color:var(--ink)}
+.fly{position:fixed;z-index:60;pointer-events:none;font-size:34px;animation:fly 1s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+.pop{position:fixed;z-index:61;pointer-events:none;font-family:var(--hf);font-weight:900;font-size:24px;text-transform:uppercase;color:var(--green);-webkit-text-stroke:4px var(--ink);paint-order:stroke fill;animation:up .9s ease-out forwards;transform:translateX(-50%)}
+@keyframes up{to{transform:translate(-50%,-80px);opacity:0}}
+
+/* menu */
+.menu{margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left}
+.it{background:var(--cream);color:var(--ink);border:4px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .2s}
+.it:hover{transform:translate(-3px,-6px) rotate(-1deg)}
+.it img{width:100%;aspect-ratio:3/2;object-fit:cover;border-bottom:4px solid var(--ink);background:#111}
+.it .t{padding:12px 14px 14px}
+.it .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.it h3{font-family:var(--hf);font-weight:900;font-size:21px;text-transform:uppercase;line-height:1}
+.it .pr{font-family:var(--hf);font-weight:900;font-size:15px;color:var(--green);-webkit-text-stroke:0;white-space:nowrap}
+.it p{margin-top:6px;font-size:11.5px;line-height:1.5;color:#3a3f55}
+.hold{margin:46px auto 0;max-width:620px;border:4px solid var(--ink);border-radius:28px;overflow:hidden;box-shadow:10px 10px 0 var(--org)}
+
+footer{text-align:center;padding:30px 16px calc(50px + env(safe-area-inset-bottom))}
+footer .big{font-size:clamp(46px,10vw,130px)}
+footer .cta{margin:30px 0}
+footer p{font-size:11.5px;color:#c4d4ff;max-width:620px;margin:0 auto;line-height:1.7}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}.rv.on{opacity:1;transform:none}
+
+@media (max-width:900px){.menu{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .top .btn span{display:none}.brand b{font-size:17px}.brand img{width:32px;height:32px}
+  h1{font-size:13vw;text-shadow:3px 3px 0 var(--org),6px 6px 0 var(--ink)}
+  .big{-webkit-text-stroke:2px var(--ink)}
+  .hero .bg{height:44%;max-width:none;right:auto;left:50%;transform:translateX(-64%);-webkit-mask:linear-gradient(180deg,transparent 0,#000 30%);mask:linear-gradient(180deg,transparent 0,#000 30%)}
+  .tb{grid-template-columns:1fr}.tb .btn{justify-content:center}
+  .menu{gap:12px}.it h3{font-size:16px}.it .pr{font-size:12px}.it p{font-size:10.5px}
+  section{padding:72px 16px}
+  .term{box-shadow:6px 6px 0 var(--org)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <a class="brand" href="#"><img src="favicon-32.png" srcset="icon-192.png 2x" alt=""><b>MCRIBUNKS</b></a>
+  <a class="btn" href="https://x.com/mcribunks/status/2113355879563100651?s=20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8-9.2L1.3 2h7l4.9 6.4L18.9 2Zm-1.2 18h1.9L7.3 3.9H5.3L17.7 20Z"/></svg><span>Follow</span></a>
+</header>
+
+<main>
+<div class="hero">
+  <div class="bg"></div>
+  <span class="tick">$MCRIBUNKS <b id="htk">▲ +420.69%</b><i>BUY</i></span>
+  <h1 class="big">MCRIB<em>UNKS</em></h1>
+  <p class="sub">The tastiest<br><em>buy signal</em></p>
+  <div class="cta">
+    <a class="btn" href="https://x.com/mcribunks/status/2113355879563100651?s=20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8-9.2L1.3 2h7l4.9 6.4L18.9 2Zm-1.2 18h1.9L7.3 3.9H5.3L17.7 20Z"/></svg>Join on X</a>
+    <a class="btn w" href="#chart">Open the chart</a>
+  </div>
+</div>
+
+<div class="marq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="chart">
+  <span class="kick">Live-ish chart</span>
+  <h2 class="big rv">Stonks meets <em>McRib</em></h2>
+  <p class="lead rv">Every McRib you serve is a green candle. Stop serving and the chart gets hungry. Keep the line going up</p>
+  <div class="term rv">
+    <div class="th"><div><b>$MCRIBUNKS / SAUCE</b><br><span style="color:#9fb2e0">1 rib = 1 candle</span></div><div class="px" id="px">0.0420<small id="pc">+0.00%</small></div></div>
+    <canvas id="cv" width="860" height="360"></canvas>
+    <div class="tb"><p id="msg">Market is waiting for sauce. Serve the first McRib</p><button class="btn y" id="serve" type="button">🥪 Serve a McRib</button></div>
+  </div>
+</section>
+
+<section id="menu" style="padding-top:20px">
+  <span class="kick">The menu</span>
+  <h2 class="big rv">Order your <em>strategy</em></h2>
+  <div class="menu">
+    <div class="it rv"><img src="assets/surf.webp" alt="Stonks guy surfing on a McRib" loading="lazy"><div class="t"><div class="row"><h3>The Surfer</h3><span class="pr">+38%</span></div><p>Rides every pump on a fresh bun</p></div></div>
+    <div class="it rv"><img src="assets/stack.webp" alt="Stonks guy carrying a stack of three McRibs" loading="lazy"><div class="t"><div class="row"><h3>Triple Stack</h3><span class="pr">+114%</span></div><p>Why buy one when you can bag three</p></div></div>
+    <div class="it rv"><img src="assets/walk.webp" alt="Stonks guy wearing a McRib and walking" loading="lazy"><div class="t"><div class="row"><h3>Full Send</h3><span class="pr">+69%</span></div><p>Became the McRib. No turning back</p></div></div>
+    <div class="it rv"><img src="assets/arrow.webp" alt="A McRib shaped like a green up arrow" loading="lazy"><div class="t"><div class="row"><h3>Signal</h3><span class="pr">+∞</span></div><p>The tastiest buy signal ever drawn</p></div></div>
+  </div>
+  <div class="hold rv"><img src="assets/stonks.webp" alt="Stonks guy in a suit holding a glowing McRib in front of a chart" loading="lazy"></div>
+</section>
+</main>
+
+<footer>
+  <div class="big">$MCRIB<em>UNKS</em></div>
+  <div class="cta"><a class="btn" href="https://x.com/mcribunks/status/2113355879563100651?s=20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8-9.2L1.3 2h7l4.9 6.4L18.9 2Zm-1.2 18h1.9L7.3 3.9H5.3L17.7 20Z"/></svg>Follow on X</a></div>
+  <p>$MCRIBUNKS is a memecoin made for fun, not affiliated with any restaurant. The chart on this page is a joke, not financial advice. No intrinsic value, no expected return</p>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+$('#mq').innerHTML = '<span>THE TASTIEST BUY SIGNAL<i>🥪</i></span><span>STONKS MEETS MCRIB<i>📈</i></span><span>$MCRIBUNKS<i>🥪</i></span><span>EXTRA SAUCE<i>📈</i></span>'.repeat(5);
+const topBar = $('#top'); addEventListener('scroll', () => topBar.classList.toggle('s', scrollY > 40), { passive: true });
+// chart
+const cv = $('#cv'), cx = cv.getContext('2d'), W = cv.width, H = cv.height, CW = 16, N = Math.floor(W / CW);
+const START = .042; let price = START, candles = [], pump = 0, served = 0;
+for (let i = 0; i < N; i++) { const o = price; price *= 1 + (Math.random() - .52) * .02; candles.push({ o, c: price, h: Math.max(o, price) * (1 + Math.random() * .006), l: Math.min(o, price) * (1 - Math.random() * .006) }); }
+let cur = { o: price, c: price, h: price, l: price };
+function draw() {
+  const all = candles.concat([cur]); let mx = -1e9, mn = 1e9; all.forEach(k => { mx = Math.max(mx, k.h); mn = Math.min(mn, k.l); });
+  const pad = (mx - mn) * .12 + 1e-6; mx += pad; mn -= pad; const Y = v => H - 20 - (v - mn) / (mx - mn) * (H - 40);
+  cx.clearRect(0, 0, W, H); cx.strokeStyle = 'rgba(120,170,255,.12)'; cx.lineWidth = 1;
+  for (let i = 1; i < 6; i++) { cx.beginPath(); cx.moveTo(0, i * H / 6); cx.lineTo(W, i * H / 6); cx.stroke(); }
+  all.forEach((k, i) => { const x = i * CW + CW / 2, up = k.c >= k.o; cx.strokeStyle = cx.fillStyle = up ? '#27d36a' : '#ff5a5a'; cx.beginPath(); cx.moveTo(x, Y(k.h)); cx.lineTo(x, Y(k.l)); cx.stroke(); const y1 = Y(Math.max(k.o, k.c)), y2 = Y(Math.min(k.o, k.c)); cx.fillRect(x - 5, y1, 10, Math.max(2, y2 - y1)); });
+  const ly = Y(cur.c); cx.setLineDash([4, 4]); cx.strokeStyle = '#ffd23f'; cx.beginPath(); cx.moveTo(0, ly); cx.lineTo(W, ly); cx.stroke(); cx.setLineDash([]);
+  cx.fillStyle = '#ffd23f'; cx.fillRect(W - 76, ly - 11, 76, 22); cx.fillStyle = '#0b0d14'; cx.font = '700 12px "Martian Mono", monospace'; cx.fillText(cur.c.toFixed(4), W - 70, ly + 4);
+  const ch = (cur.c / START - 1) * 100; $('#px').firstChild.nodeValue = cur.c.toFixed(4); $('#pc').textContent = (ch >= 0 ? '+' : '') + ch.toFixed(2) + '%'; $('#px').classList.toggle('dn', ch < 0);
+}
+let last = performance.now(), acc = 0;
+function loop(now) {
+  const dt = (now - last) / 1000; last = now; acc += dt;
+  const drift = pump > 0 ? .006 * pump : -.0012;
+  cur.c *= 1 + (drift + (Math.random() - .5) * .004) * dt * 6; cur.h = Math.max(cur.h, cur.c); cur.l = Math.min(cur.l, cur.c);
+  pump = Math.max(0, pump - dt * 1.2);
+  if (acc > .7) { acc = 0; candles.push(cur); if (candles.length > N - 1) candles.shift(); cur = { o: cur.c, c: cur.c, h: cur.c, l: cur.c }; }
+  draw(); requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+const MSG = ['Sauce detected. Bulls are hungry', 'Another rib, another candle', 'Analysts upgrade to <b>EXTRA SAUCE</b>', 'Chart says one thing: <b>more McRib</b>', 'Bears left the restaurant', 'This is the tastiest buy signal'];
+function fly(x, y) { for (let i = 0; i < 5; i++) { const d = document.createElement('div'); d.className = 'fly'; d.textContent = i ? ['📈', '🥪', '💸'][i % 3] : '🥪'; const a = -Math.PI / 2 + (Math.random() - .5) * 1.8, r = 80 + Math.random() * 120; d.style.cssText = `left:${x - 17}px;top:${y - 17}px;--dx:${Math.cos(a) * r}px;--dy:${Math.sin(a) * r}px;--r:${Math.random() * 360 - 180}deg`; document.body.appendChild(d); setTimeout(() => d.remove(), 1000); } }
+$('#serve').addEventListener('click', e => {
+  pump = Math.min(4, pump + 1.2); served++; cur.c *= 1.012; cur.h = Math.max(cur.h, cur.c);
+  const r = e.currentTarget.getBoundingClientRect(); fly(r.left + r.width / 2, r.top);
+  const p = document.createElement('div'); p.className = 'pop'; p.textContent = served % 5 ? '+1 rib' : 'STONKS'; p.style.left = r.left + r.width / 2 + 'px'; p.style.top = r.top - 30 + 'px'; document.body.appendChild(p); setTimeout(() => p.remove(), 900);
+  $('#msg').innerHTML = MSG[(served - 1) % MSG.length] + ` <span class="sig">${served} served</span>`;
+});
+// hero ticker flicker
+setInterval(() => { $('#htk').textContent = '▲ +' + (380 + Math.random() * 90).toFixed(2) + '%'; }, 1600);
+// reveal
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } }), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
