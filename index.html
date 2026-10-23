@@ -87,6 +87,12 @@ canvas{display:block;width:100%;height:auto;background:#0d1222}
 .it p{margin-top:6px;font-size:11.5px;line-height:1.5;color:#3a3f55}
 .hold{margin:46px auto 0;max-width:620px;border:4px solid var(--ink);border-radius:28px;overflow:hidden;box-shadow:10px 10px 0 var(--org)}
 
+
+.ca{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px;background:var(--ink);border:3px solid var(--ink);border-radius:12px;padding:10px 14px;box-shadow:4px 4px 0 var(--org)}
+.ca .lbl{font-family:var(--hf);font-weight:900;font-size:13px;color:var(--yel);letter-spacing:.08em}
+.ca code{font-family:var(--mf);font-size:12px;font-weight:600;color:#fff;word-break:break-all}
+.ca .copy{font-family:var(--hf);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.04em;border:2px solid var(--yel);background:var(--yel);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer}
+.ca .copy:hover{filter:brightness(1.05)}
 footer{text-align:center;padding:30px 16px calc(50px + env(safe-area-inset-bottom))}
 footer .big{font-size:clamp(46px,10vw,130px)}
 footer .cta{margin:30px 0}
@@ -119,7 +125,9 @@ footer p{font-size:11.5px;color:#c4d4ff;max-width:620px;margin:0 auto;line-heigh
   <span class="tick">$MCRIBUNKS <b id="htk">▲ +420.69%</b><i>BUY</i></span>
   <h1 class="big">MCRIB<em>UNKS</em></h1>
   <p class="sub">The tastiest<br><em>buy signal</em></p>
+  <div class="ca" id="caBox"><span class="lbl">CA</span><code id="ca">0xCommingSoon</code><button class="copy" type="button" id="copyCa">Copy</button></div>
   <div class="cta">
+    <a class="btn y" id="buyBtn" href="https://app.uniswap.org/swap" target="_blank" rel="noopener">Buy $MCRIBUNKS</a>
     <a class="btn" href="https://x.com/mcribunks/status/2113355879563100651?s=20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8-9.2L1.3 2h7l4.9 6.4L18.9 2Zm-1.2 18h1.9L7.3 3.9H5.3L17.7 20Z"/></svg>Join on X</a>
     <a class="btn w" href="#chart">Open the chart</a>
   </div>
@@ -153,7 +161,8 @@ footer p{font-size:11.5px;color:#c4d4ff;max-width:620px;margin:0 auto;line-heigh
 
 <footer>
   <div class="big">$MCRIB<em>UNKS</em></div>
-  <div class="cta"><a class="btn" href="https://x.com/mcribunks/status/2113355879563100651?s=20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8-9.2L1.3 2h7l4.9 6.4L18.9 2Zm-1.2 18h1.9L7.3 3.9H5.3L17.7 20Z"/></svg>Follow on X</a></div>
+  <div class="ca"><span class="lbl">CA</span><code class="caVal">0xCommingSoon</code><button class="copy" type="button">Copy</button></div>
+  <div class="cta"><a class="btn y buyLink" href="https://app.uniswap.org/swap" target="_blank" rel="noopener">Buy $MCRIBUNKS</a><a class="btn" href="https://x.com/mcribunks/status/2113355879563100651?s=20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8-9.2L1.3 2h7l4.9 6.4L18.9 2Zm-1.2 18h1.9L7.3 3.9H5.3L17.7 20Z"/></svg>Follow on X</a></div>
   <p>$MCRIBUNKS is a memecoin made for fun, not affiliated with any restaurant. The chart on this page is a joke, not financial advice. No intrinsic value, no expected return</p>
 </footer>
 
@@ -196,6 +205,15 @@ $('#serve').addEventListener('click', e => {
 });
 // hero ticker flicker
 setInterval(() => { $('#htk').textContent = '▲ +' + (380 + Math.random() * 90).toFixed(2) + '%'; }, 1600);
+
+const CA = '0xCommingSoon';
+document.querySelectorAll('#ca, .caVal').forEach(el => { el.textContent = CA; });
+document.querySelectorAll('.copy').forEach(btn => btn.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(CA); } catch {
+    const t = document.createElement('textarea'); t.value = CA; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove();
+  }
+  const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => btn.textContent = o, 1400);
+}));
 // reveal
 const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } }), { threshold: .15 });
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
